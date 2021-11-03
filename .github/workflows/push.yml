@@ -13,7 +13,7 @@ jobs:
     env:
       PKR_VAR_access_key:      "${{secrets.ACCESS_KEY}}"
       PKR_VAR_secret_key:       "${secrets.SECRET_KEY}"
-      PKR_VAR_region:           "${secrets.AWS_REGION}"
+      PKR_VAR_aws_region:           "${secrets.AWS_REGION}"
       PKR_VAR_instance_type:    "${secrets.INSTANCE_TYPE}"
       PKR_VAR_subnet_id:        "${secrets.SUBNET_ID}"
       PKR_VAR_source_ami:       "${secrets.SOURCE_AMI}"
