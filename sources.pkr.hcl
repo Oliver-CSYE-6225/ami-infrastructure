@@ -6,7 +6,7 @@ source "amazon-ebs" "ubuntu" {
   subnet_id       = "${var.subnet_id}"
   source_ami      = "${var.source_ami}"
   ssh_username    = "${var.ssh_username}"
-  ami_name        = "${PKR_VAR_ami_name}"
+  ami_name        = "${var.ami_name}"
   ami_description = "${var.ami_description}"
   ami_users = "${var.ami_users}"
   launch_block_device_mappings {
