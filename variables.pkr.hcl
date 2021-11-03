@@ -20,7 +20,6 @@ variable "subnet_id" {
 
 variable "source_ami" {
   type = string
-  default = ${{}}
 }
 
 variable "ssh_username" {

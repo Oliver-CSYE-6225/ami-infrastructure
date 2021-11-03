@@ -1,8 +1,8 @@
 build {
-  name = "packer-templare-v1"
-  sources = [
-    "source.amazon-ebs.ubuntu"
-  ]
+  name = "packer-template-v1"
+  // sources = [
+  //   "source.amazon-ebs.ubuntu"
+  // ]
 
   provisioner "shell" {
     environment_vars = [
