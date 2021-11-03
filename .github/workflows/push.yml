@@ -34,7 +34,10 @@ jobs:
 
     # Ref: https://github.com/marketplace/actions/packer-github-actions
     - name: Build Artifact
-      run: packer build .
+      run:  |
+        export timestamp=$(date +%s)
+        PKR_VAR_ami_name=${{secrets.AMI_NAME}}$timestamp
+        packer build .
       # with:
       #     command: build
       #     arguments: "-color=false -on-error=abort"
