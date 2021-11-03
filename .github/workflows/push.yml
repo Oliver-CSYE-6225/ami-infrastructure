@@ -33,11 +33,19 @@ jobs:
 
     # Ref: https://github.com/marketplace/actions/packer-github-actions
     - name: Build Artifact
-      uses: hashicorp/packer-github-actions@master
-      with:
-          command: build
-          arguments: "-color=false -on-error=abort"
-          target: builder.pkr.hcl
-      env:
-          PACKER_LOG: 1
+      run: packer build .
+      # with:
+      #     command: build
+      #     arguments: "-color=false -on-error=abort"
+      #     target: builder.pkr.hcl
+      # env:
+      #     PACKER_LOG: 1
+    #  - name: Build Artifact
+    #   uses: hashicorp/packer-github-actions@master
+    #   with:
+    #       command: build
+    #       arguments: "-color=false -on-error=abort"
+    #       target: builder.pkr.hcl
+    #   env:
+    #       PACKER_LOG: 1
 
