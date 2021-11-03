@@ -11,15 +11,15 @@ jobs:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
     env:
-      PKR_VAR_access_key:      "${{secrets.access_key}}"
-      PKR_VAR_secret_key:       "${secret_key}"
-      PKR_VAR_region:           "${secrets.aws_region}"
-      PKR_VAR_instance_type:    "${secrets.instance_type}"
-      PKR_VAR_subnet_id:        "${secrets.subnet_id}"
-      PKR_VAR_source_ami:       "${secrets.source_ami}"
-      PKR_VAR_ssh_username:     "${secrets.ssh_username}"
-      PKR_VAR_ami_name:         "${secrets.ami_name}"
-      PKR_VAR_ami_description:  "${secrets.ami_description}"
+      PKR_VAR_access_key:      "${{secrets.ACCESS_KEY}}"
+      PKR_VAR_secret_key:       "${secrets.SECRET_KEY}"
+      PKR_VAR_region:           "${secrets.AWS_REGION}"
+      PKR_VAR_instance_type:    "${secrets.INSTANCE_TYPE}"
+      PKR_VAR_subnet_id:        "${secrets.SUBNET_ID}"
+      PKR_VAR_source_ami:       "${secrets.SOURCE_AMI}"
+      PKR_VAR_ssh_username:     "${secrets.SSH_USERNAME}"
+      PKR_VAR_ami_name:         "${secrets.AMI_NAME}"
+      PKR_VAR_ami_description:  "${secrets.AMI_DESCRIPTION}"
       #   AWS_REGION: us-east-1
       # ARTIFACT_NAME: webapp_v1
       # CODE_DEPLOY_APPLICATION_NAME: csye6225-webapp
