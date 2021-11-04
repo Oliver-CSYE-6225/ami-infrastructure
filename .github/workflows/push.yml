@@ -1,0 +1,55 @@
+name: Merge to AMI Repo
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+    env:
+      PKR_VAR_access_key: ${{secrets.ACCESS_KEY}}
+      PKR_VAR_secret_key: ${{secrets.SECRET_KEY}}
+      PKR_VAR_aws_region: ${{secrets.AWS_REGION}}
+      PKR_VAR_instance_type: ${{secrets.INSTANCE_TYPE}}
+      PKR_VAR_subnet_id: ${{secrets.SUBNET_ID}}
+      PKR_VAR_source_ami: ${{secrets.SOURCE_AMI}}
+      PKR_VAR_ssh_username: ${{secrets.SSH_USERNAME}}
+      PKR_VAR_ami_name: ${{secrets.AMI_NAME}}
+      PKR_VAR_ami_description: ${{secrets.AMI_DESCRIPTION}}
+      PKR_VAR_ami_users: '[${{secrets.PROD_ACCOUNT_NUMBER}}]'
+      #   AWS_REGION: us-east-1
+      # ARTIFACT_NAME: webapp_v1
+      # CODE_DEPLOY_APPLICATION_NAME: csye6225-webapp
+      # CODEDEPLOY_APPLICATION_DEPLOYMENT_GROUP_NAME: csye6225-webapp-deployment
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+
+    # Ref: https://github.com/marketplace/actions/packer-github-actions
+    - name: Build Artifact
+      run:  |
+        export timestamp=$(date +%s)
+        PKR_VAR_ami_name=${{secrets.AMI_NAME}}$timestamp
+        packer build .
+      # with:
+      #     command: build
+      #     arguments: "-color=false -on-error=abort"
+      #     target: builder.pkr.hcl
+      # env:
+      #     PACKER_LOG: 1
+    #  - name: Build Artifact
+    #   uses: hashicorp/packer-github-actions@master
+    #   with:
+    #       command: build
+    #       arguments: "-color=false -on-error=abort"
+    #       target: builder.pkr.hcl
+    #   env:
+    #       PACKER_LOG: 1
+
