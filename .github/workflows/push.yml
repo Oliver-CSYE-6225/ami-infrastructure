@@ -20,7 +20,7 @@ jobs:
       PKR_VAR_ssh_username: ${{secrets.SSH_USERNAME}}
       PKR_VAR_ami_name: ${{secrets.AMI_NAME}}
       PKR_VAR_ami_description: ${{secrets.AMI_DESCRIPTION}}
-      PKR_VAR_ami_users: '[546679085257]'
+      PKR_VAR_ami_users: '[${{secrets.PROD_ACCOUNT_NUMBER}}]'
       #   AWS_REGION: us-east-1
       # ARTIFACT_NAME: webapp_v1
       # CODE_DEPLOY_APPLICATION_NAME: csye6225-webapp
