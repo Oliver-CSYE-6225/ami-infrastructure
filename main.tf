@@ -43,7 +43,7 @@ resource "aws_iam_policy" "gh-ec2-ami" {
           "ec2:StopInstances",
           "ec2:TerminateInstances"
         ],
-        "Resource" : "*"
+        "Resource" : "arn:aws:ec2:*:*:*/*"
       }
     ]
   })
