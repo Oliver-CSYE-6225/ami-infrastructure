@@ -33,14 +33,7 @@ resource "aws_iam_policy" "gh-ec2-ami" {
                 "ec2:DeleteSecurityGroup",
                 "ec2:CreateSnapshot",
                 "ec2:ModifyInstanceAttribute",
-                "ec2:DeleteKeyPair"
-            ],
-            "Resource": "arn:aws:ec2:*:*:*/*"
-        },
-        {
-            "Sid": "VisualEditor2",
-            "Effect": "Allow",
-            "Action": [
+                "ec2:DeleteKeyPair".
                 "ec2:DescribeImages",
                 "ec2:DescribeInstances",
                 "ec2:DescribeTags",
