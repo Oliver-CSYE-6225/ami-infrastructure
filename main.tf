@@ -44,7 +44,7 @@ resource "aws_iam_policy" "gh-ec2-ami" {
                 "ec2:DescribeSecurityGroups",
                 "ec2:DescribeInstanceStatus"
             ],
-            "Resource": "arn:aws:ec2:*:*:*/*"
+            "Resource": "arn:aws:ec2:us-east-1:*:*/*"
         }
     ]
 }
