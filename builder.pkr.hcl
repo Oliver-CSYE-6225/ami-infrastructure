@@ -30,5 +30,5 @@ build {
       "sudo service codedeploy-agent status",
       "echo \"FOO is $FOO\" > example.txt",
     ]
-  
+  }
 }
