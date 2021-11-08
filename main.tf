@@ -57,33 +57,8 @@ resource "aws_iam_policy" "gh-ec2-ami" {
   EOF
 }
 
-resource "aws_iam_role" "test_role" {
-  name = "test_role"
-
-  # Terraform's "jsonencode" function converts a
-  # Terraform expression result to valid JSON syntax.
-  assume_role_policy = jsonencode({
-    Version = "2012-10-17"
-    Statement = [
-      {
-        Action = "sts:AssumeRole"
-        Effect = "Allow"
-        Sid    = ""
-        Principal = {
-          AWS =  "arn:aws:iam::746774523931:user/ghactions-ami"
-        }
-      },
-    ]
-  })
-
-  tags = {
-    tag-key = "tag-value"
-  }
-}
-
 resource "aws_iam_policy_attachment" "attach-gh-ec2-ami" {
   name       = "attach-gh-ec2-ami"
-  // users      = ["ghactions-ami"]
-  roles      = [aws_iam_role.test_role.name]
+  users      = ["ghactions-ami"]
   policy_arn = aws_iam_policy.gh-ec2-ami.arn
 }
