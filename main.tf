@@ -34,7 +34,7 @@ resource "aws_iam_policy" "gh-ec2-ami" {
                 "ec2:ModifyInstanceAttribute",
                 "ec2:DeleteKeyPair"
             ],
-            "Resource": "arn:aws:ec2:${var.aws_region}:${var.account_number}:*/*"
+            "Resource": "arn:aws:ec2:*:*:*/*"
         },
         {
             "Sid": "VisualEditor2",
