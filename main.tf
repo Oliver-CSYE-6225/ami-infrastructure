@@ -1,6 +1,6 @@
-resource "aws_iam_policy" "gh-ec2-ami" {
-  name        = "gh-ec2-ami"
-  description = "gh-ec2-ami"
+resource "aws_iam_policy" "gh-ec2-ami-policy" {
+  name        = "gh-ec2-ami-polic"
+  description = "gh-ec2-ami-polic"
   policy = <<EOF
 {
     "Version": "2012-10-17",
@@ -60,5 +60,5 @@ resource "aws_iam_policy" "gh-ec2-ami" {
 resource "aws_iam_policy_attachment" "attach-gh-ec2-ami" {
   name       = "attach-gh-ec2-ami"
   users      = ["ghactions-ami"]
-  policy_arn = aws_iam_policy.gh-ec2-ami.arn
+  policy_arn = aws_iam_policy.gh-ec2-ami-policy.arn
 }
