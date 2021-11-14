@@ -28,7 +28,7 @@ build {
       "sudo service codedeploy-agent status",
       "sudo service codedeploy-agent start",
       "sudo service codedeploy-agent status",
-      "sleep 30"
+      "sleep 30",
       "sudo apt update",
       "sudo apt install -y yum",
       "sudo yum install amazon-cloudwatch-agent",
